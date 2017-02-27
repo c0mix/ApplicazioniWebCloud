@@ -3,26 +3,21 @@ from rest_framework import serializers
 from sito.models import Sportivo, Attivita, Risultato, Test
 
 class UserSerializer(serializers.ModelSerializer):
-    sportivi = serializers.HyperlinkedRelatedField(queryset=Sportivo.objects.all(), view_name='sportivo-detail', many=True)
-
     class Meta:
         model = User
-        fields = ('url', 'username', 'sportivi')
+        fields = ('url', 'username')
 
 class SportivoSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Sportivo
-        fields = ('id','nome', 'cognome', 'data_nascita', 'luogo_nascita', 'paese_nascita', 'altezza', 'peso', 'foto', 'owner')
+        fields = ('id','nome', 'cognome', 'sport', 'data_nascita', 'luogo_nascita', 'paese_nascita', 'altezza', 'peso', 'foto')
 
 class AttivitaSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Attivita
-        fields = ('id', 'nome', 'descrizione', 'data', 'prezzo', 'sconto', 'facilitazioni', 'organizzatore', 'created', 'owner')
+        fields = ('id', 'nome', 'descrizione', 'data', 'prezzo', 'sconto', 'facilitazioni', 'organizzatore', 'created')
 
 class TestSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Test
-        fields = ('id', 'nome', 'owner')
+        fields = ('id', 'nome')
