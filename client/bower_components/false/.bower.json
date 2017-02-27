@@ -1,0 +1,27 @@
+{
+  "name": "false",
+  "version": "0.1.1",
+  "authors": [
+    {
+      "name": "ooxi",
+      "email": "violetland@mail.ru",
+      "homepage": "https://github.com/ooxi"
+    }
+  ],
+  "description": "A minimal library forming a contradiction by always returning false",
+  "homepage": "https://github.com/ooxi/false",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ooxi/false"
+  },
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "b9f3eb9fdf215194002e15b1e4dc0e08281c6482"
+  },
+  "_source": "https://github.com/ooxi/false.git",
+  "_target": "^0.1.1",
+  "_originalSource": "false",
+  "_direct": true
+}
