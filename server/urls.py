@@ -16,6 +16,7 @@ Including another URLconf
 
 from rest_framework.routers import DefaultRouter
 from sito.views import SportivoViewSet, AttivitaViewSet, UserViewSet, TestViewSet
+from django.conf.urls import url, include
 
 router = DefaultRouter()
 router.register(prefix='sportivi', viewset=SportivoViewSet)
@@ -23,4 +24,7 @@ router.register(prefix='attivita', viewset=AttivitaViewSet)
 router.register(prefix='tests', viewset=TestViewSet)
 router.register(prefix='users', viewset=UserViewSet)
 
-urlpatterns = router.urls
+urlpatterns = [
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+]

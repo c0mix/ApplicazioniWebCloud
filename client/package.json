@@ -1,6 +1,6 @@
 {
   "name": "italiaSport-client",
-  "description": "Web and cloud application",
+  "description": "Web and Cloud Application",
   "dependencies": {
     "express": "^4.13.4"
   }

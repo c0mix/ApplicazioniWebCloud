@@ -9,7 +9,21 @@
   </div>
   <br/>
 
-  Sportivi
+  Attivita
+  <div ng-repeat="attivita in attivitas">
+      <div style="margin-left: 20px;">
+          nome: {{ attivita.nome }} <br/>
+          <hr/>
+      </div>
+  </div>
+  <br/>
+
+
+</div>
+
+<div ng-controller="sportivoController">
+
+  SportiviAgaing
   <div ng-repeat="sportivo in sportivi">
       <div style="margin-left: 20px;">
           id: {{ sportivo.id }} <br/>
@@ -27,15 +41,5 @@
       </div>
   </div>
   <br/>
-
-  Attivita
-  <div ng-repeat="attivita in attivitas">
-      <div style="margin-left: 20px;">
-          nome: {{ attivita.nome }} <br/>
-          <hr/>
-      </div>
-  </div>
-  <br/>
-
 
 </div>

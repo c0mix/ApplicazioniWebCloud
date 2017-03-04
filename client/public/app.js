@@ -2,8 +2,7 @@
 
 var sito = angular.module("sito", []);
 
-angular
-    .module('SampleApplication', [
+angular.module('ItaliaSportApplication', [
         'appRoutes',
         'sito',
         'ngResource'

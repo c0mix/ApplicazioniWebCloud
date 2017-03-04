@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ItaliaSportApplication">
+    <head>
+        <meta charset="utf-8">
+        <title>Italia Sport by Comi Lorenzo</title>
+
+        <!--  Angular Setup -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+        <!-- Application Setup -->
+        <script src="public/appRoutes.js"></script>
+        <script src="public/app.js"></script>
+
+        <!--  Controllers -->
+        <script src="public/components/sito/controllers/sito.control.js"></script>
+        <script src="public/components/sito/services/sportivo.service.js"></script>
+
+
+
+    </head>
+    <body>
+        <!--  Controllers metti direttamente codice-->
+<div ng-controller="sportivoController">
+
+  SportiviTOP
+  <div ng-repeat="sportivo in sportivi">
+      <div style="margin-left: 20px;">
+          id: {{ sportivo.id }} <br/>
+          nome: {{ sportivo.nome }} <br/>
+          cognome: {{ sportivo.cognome }} <br/>
+          sport: {{ sportivo.sport }} <br/>
+          data_nascita: {{ sportivo.data_nascita }} <br/>
+          luogo_nascita: {{ sportivo.luogo_nascita }} <br/>
+          paese_nascita: {{ sportivo.paese_nascita }} <br/>
+          altezza: {{ sportivo.altezza }} <br/>
+          peso: {{ sportivo.peso }} <br/>
+          foto: {{ sportivo.foto }} <br/>
+          <hr/>
+      </div>
+  </div>
+  <br/>
+
+</div>
+    </body>
+</html>
