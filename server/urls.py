@@ -17,6 +17,8 @@ Including another URLconf
 from rest_framework.routers import DefaultRouter
 from sito.views import SportivoViewSet, AttivitaViewSet, UserViewSet, TestViewSet
 from django.conf.urls import url, include
+from rest_framework_jwt.views import obtain_jwt_token
+from djoser import views
 
 router = DefaultRouter()
 router.register(prefix='sportivi', viewset=SportivoViewSet)
@@ -26,5 +28,10 @@ router.register(prefix='users', viewset=UserViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^auth/login', obtain_jwt_token),  # using JSON web token
+    url(r'^auth/register', views.RegistrationView.as_view()),
+    url(r'^auth/password/reset', views.PasswordResetView.as_view()),
+    url(r'^auth/password/reset/confirm', views.PasswordResetConfirmView.as_view()),
+    url(r'^auth/', include('djoser.urls')),
+    url(r'^auth/logout/$', views.LogoutView.as_view(), name='logout'),
 ]

@@ -5,7 +5,7 @@ from sito.models import Sportivo, Attivita, Risultato, Test
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username')
+        fields = ('url', 'username', 'first_name', 'last_name', 'email')
 
 class SportivoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,7 +15,7 @@ class SportivoSerializer(serializers.ModelSerializer):
 class AttivitaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attivita
-        fields = ('id', 'nome', 'descrizione', 'data', 'prezzo', 'sconto', 'facilitazioni', 'organizzatore', 'created')
+        fields = ('id', 'nome', 'descrizione', 'numEvento', 'giornoEvento', 'annoEvento', 'meseEvento', 'prezzo', 'sconto', 'facilitazioni', 'organizzatore', 'created')
 
 class TestSerializer(serializers.ModelSerializer):
     class Meta:

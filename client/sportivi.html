@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="ItaliaSportApplication">
     <head>
+
+        <!-- Meta Definition -->
         <meta charset="utf-8">
-        <title>Italia Sport by Comi Lorenzo</title>
+        <title>Italia Sport</title>
 
         <!--  Angular Setup -->
         <script src="bower_components/angular/angular.js"></script>
@@ -17,31 +19,50 @@
         <script src="public/components/sito/controllers/sito.control.js"></script>
         <script src="public/components/sito/services/sportivo.service.js"></script>
 
-
+        <!-- Photo gallery toolset -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link type="text/css" rel="stylesheet" href="css/sportivi/html5reset-1.6.1.css">
+        <link type="text/css" rel="stylesheet" href="css/sportivi/styles.css">
 
     </head>
+
     <body>
-        <!--  Controllers metti direttamente codice-->
-<div ng-controller="sportivoController">
+        <header>
+	        <h1>I Nostri Sportivi</h1>
+        </header>
 
-  SportiviTOP
-  <div ng-repeat="sportivo in sportivi">
-      <div style="margin-left: 20px;">
-          id: {{ sportivo.id }} <br/>
-          nome: {{ sportivo.nome }} <br/>
-          cognome: {{ sportivo.cognome }} <br/>
-          sport: {{ sportivo.sport }} <br/>
-          data_nascita: {{ sportivo.data_nascita }} <br/>
-          luogo_nascita: {{ sportivo.luogo_nascita }} <br/>
-          paese_nascita: {{ sportivo.paese_nascita }} <br/>
-          altezza: {{ sportivo.altezza }} <br/>
-          peso: {{ sportivo.peso }} <br/>
-          foto: {{ sportivo.foto }} <br/>
-          <hr/>
-      </div>
-  </div>
-  <br/>
+        <!--  Controllers -->
+        <section id="gallery" ng-controller="sportivoController">
 
-</div>
+            <!-- Generazione dinamica delle "Cards" relative a ciascun sportivo-->
+            <figure ng-repeat="sportivo in sportivi">
+
+                <!-- Cliccando sulla foto cerco lo sportivo su google -->
+                <a href="https://www.google.it/search?q={{sportivo.nome}}+{{sportivo.cognome}}">
+                    <img src="{{sportivo.foto}}">
+                    <div class="container">{{sportivo.nome}} {{sportivo.cognome}}
+                        <div class="container2">
+                            Sport: {{sportivo.sport}}<br/>
+                            Data di Nascita: {{ sportivo.data_nascita }} <br/>
+                            Luogo di Nascita: {{ sportivo.luogo_nascita }} <br/>
+                            Paese di Nascita: {{ sportivo.paese_nascita }} <br/>
+                            Altezza: {{ sportivo.altezza }} <br/>
+                            Peso: {{ sportivo.peso }} <br/>
+                        </div>
+                    </div>
+                </a>
+            </figure>
+
+        </section>
+
+        <footer>
+            <p>2017
+                <a href="http://www.unimi.it/default.htm">
+                    Università degli Studi di Milano
+                </a>
+                Lorenzo Comi
+            </p>
+        </footer>
+
     </body>
 </html>

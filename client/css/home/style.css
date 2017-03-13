@@ -2,43 +2,101 @@
 @import url("animation.css") screen;
 
 /* Common */
-html, body {
-	background:#eaeaea url(../img/bg.png) repeat;
-	font-size:12px;
-	font-family:"Open Sans", serif;
-	min-width:960px;
-	margin:0;
-	padding:0;
-	color:#aaa;
-}
 
-footer {
-    text-align: center;
-    color: #000;
-    font-family:"Open Sans", serif;
-	background-color: #6495ED;
-	padding:5px 0 5px;
+body {
+background: #eeeeee;
+font-family: "Lucida Grande", Helvetica, Arial,Verdana, sans-serif;
+font-size:100%;
+line-height:1.5;
+-webkit-text-size-adjust:none;
+color: #1b1b1b;
 }
-
 
 h1 {
-	font-size:48px;
-    font-family:"Open Sans", serif;
-	color:#000;
-	text-shadow:0px 1px 1px #f4f4f4;
-	text-align:center;
-	padding:30px 0 30px;
+font-size:1.25em;
+color:#ffffff;
+font-weight:normal;
 }
 
 h2 {
-	font-size: 36px;
-    font-family:"Open Sans", serif;
-	color:#000;
-	text-shadow:0px 1px 1px #f4f4f4;
-	text-align:center;
-	padding:10px 0 30px;
+font-size:1.15em;
+color:#ffffff;
+font-weight:normal;
 }
 
+a {
+color:#E44D26;
+text-decoration:none;
+}
+
+header, footer {
+background: #000000;
+background: -moz-linear-gradient(top, #303130 0%, #000101 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#303130), color-stop(100%,#000101));
+-webkit-box-shadow: 0 0 5px #42403f;
+-moz-box-shadow: 0 0 5px #42403f;
+box-shadow: 0 0 5px #42403f;
+padding:2%;
+}
+
+header {
+border-bottom: 1px solid #000000;
+}
+
+footer {
+border-top: 0px solid #000000;
+text-align:center;
+padding: 1%;
+}
+
+footer p {
+color:#ffffff;
+font-size:0.6875em;
+}
+
+/* Navigation Bar */
+nav#menu{
+    font-family: "Lucida Grande", Helvetica, Arial,Verdana, sans-serif;
+    font-size:1.10em;
+    color:#ffffff;
+    border: solid #ccc;
+    font-weight:normal;
+    border-width: 1px 0;
+    list-style:none;
+    margin:15px;
+    padding:0px;
+    text-align:center;
+}
+
+nav#menu ul{
+    margin: 10px
+
+}
+
+nav#menu li{
+    display: inline;
+    background-color: #1b1b1b;
+    border-bottom: 5px solid #E44D26;
+    width: 180px;
+    height: 30px;
+    margin: 2px;
+}
+
+nav#menu a{
+    color: #fff;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 50px;
+    width: 180px;
+    height: 50px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav#menu li.active, nav#menu li:hover {
+    background-color: #E44D26;
+    border-bottom: 5px solid #000000;
+}
 
 /* LAYOUT */
 .container {
@@ -61,7 +119,7 @@ h2 {
 	box-shadow:1px 1px 5px rgba(0,0,0,0.7);
 	height:320px;
 	width:680px;
-	margin:40px auto 0;
+	margin:10px auto 0;
 	overflow:visible;
 	position:relative;
 }
@@ -119,47 +177,4 @@ h2 {
 	background:#000;
 	-moz-animation:fullexpand 25s ease-out infinite;
 	-webkit-animation:fullexpand 25s ease-out infinite;
-}
-
-/* Navigation Bar */
-nav#menu{
-    font-family:"Open Sans", serif;
-    font-size: 25px;
-    border: solid #ccc;
-    border-width: 1px 0;
-    list-style:none;
-    margin:10px;
-    padding:10px;
-    text-align:center;
-}
-
-nav#menu li{
-    display: inline;
-    background-color: #6495ED;
-    border-bottom: 5px solid #000080;
-    width: 180px;
-    height: 30px;
-    margin: 2px;
-}
-
-nav#menu a{
-    color: #fff;
-    display: inline-block;
-    font-weight: bold;
-    line-height: 50px;
-    width: 180px;
-    height: 50px;
-    padding:10px;
-    text-decoration: none;
-}
-
-nav#menu li.active, nav#menu li:hover {
-    background-color: #000080;
-    border-bottom: 5px solid #6495ED;
-}
-
-/* gestione link attivi */
-a:link {
-    color: black;
-    text-decoration: none;
 }

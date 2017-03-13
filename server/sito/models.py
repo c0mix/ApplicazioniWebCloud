@@ -31,11 +31,101 @@ class Sportivo(models.Model):
         ordering = ('created',)
 
 
+class Student(models.Model):
+    Gennaio = 'Gen'
+    Febbraio = 'Feb'
+    Marzo = 'Mar'
+    Aprile = 'Apr'
+    Maggio = 'Mag'
+    Giugno = 'Giu'
+    Luglio = 'Lug'
+    Agosto = 'Ago'
+    Settembre = 'Set'
+    Ottobre = 'Ott'
+    Novembre = 'Nov'
+    Dicembre = 'Dic'
+    scelta_mesi = (
+        (Gennaio, 'Gennaio'),
+        (Febbraio, 'Febbraio'),
+        (Marzo, 'Marzo'),
+        (Aprile, 'Aprile'),
+        (Maggio, 'Maggio'),
+        (Giugno, 'Giugno'),
+        (Luglio, 'Luglio'),
+        (Agosto, 'Gennaio'),
+        (Settembre, 'Settembre'),
+        (Ottobre, 'Ottobre'),
+        (Novembre, 'Novembre'),
+        (Dicembre, 'Dicembre'),
+    )
+    year_in_school = models.CharField(
+        max_length=3,
+        choices=scelta_mesi,
+        null=False
+    )
+
+    def is_upperclass(self):
+        return self.year_in_school in (self.JUNIOR, self.SENIOR)
+
+
+
 class Attivita(models.Model):
-    #id = models.SmallIntegerField(primary_key=True)
+    Gennaio = 'Gennaio'
+    Febbraio = 'Febbraio'
+    Marzo = 'Marzo'
+    Aprile = 'Aprile'
+    Maggio = 'Maggio'
+    Giugno = 'Giugno'
+    Luglio = 'Luglio'
+    Agosto = 'Agosto'
+    Settembre = 'Settembre'
+    Ottobre = 'Ottobre'
+    Novembre = 'Novembre'
+    Dicembre = 'Dicembre'
+
+    Lunedi = 'Lunedi'
+    Martedi = 'Martedi'
+    Mercoledi = 'Mercoledi'
+    Giovedi = 'Giovedi'
+    Venerdi = 'Venerdi'
+    Sabato = 'Sabato'
+    Domenica = 'Domenica'
+
+    scelta_mesi = (
+        (Gennaio, 'Gennaio'),
+        (Febbraio, 'Febbraio'),
+        (Marzo, 'Marzo'),
+        (Aprile, 'Aprile'),
+        (Maggio, 'Maggio'),
+        (Giugno, 'Giugno'),
+        (Luglio, 'Luglio'),
+        (Agosto, 'Gennaio'),
+        (Settembre, 'Settembre'),
+        (Ottobre, 'Ottobre'),
+        (Novembre, 'Novembre'),
+        (Dicembre, 'Dicembre'),
+    )
+
+    scelta_giorni = (
+        (Lunedi, 'Lunedi'),
+        (Martedi, 'Martedi'),
+        (Mercoledi, 'Mercoledi'),
+        (Giovedi, 'Giovedi'),
+        (Venerdi, 'Venerdi'),
+        (Sabato, 'Sabato'),
+        (Domenica, 'Domenica'),
+    )
+
+    numEvento = models.IntegerField(max_length=10, null=False)
+    giornoEvento = models.CharField(max_length=10, choices=scelta_giorni, null=False)
+    meseEvento = models.CharField(max_length=10, choices=scelta_mesi, null=False)
+
     nome = models.CharField(max_length=20)
     descrizione = models.CharField(max_length=10000)
-    data = models.DateTimeField(null=True, blank=True, help_text='formato YYYY-MM-DDThh:mm:ss')
+
+    annoEvento = models.IntegerField(null=False, max_length=4)
+    oraEvento = models.TimeField(null=True, blank=True)
+
     prezzo = models.FloatField(max_length=5)
     sconto = models.FloatField(max_length=2, blank=True)
     facilitazioni = models.CharField(max_length=10000, blank=True)
@@ -49,6 +139,7 @@ class Attivita(models.Model):
 
     def __unicode__(self):
         return u"%s %s" % (self.titolo)
+
 
     class Meta:
         verbose_name_plural = "Attivita'"

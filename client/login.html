@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Simple Angular Auth</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+        <script src="public/app.js"></script>
+  </head>
+    <body>
+    <h1>Simple Angular Auth - Thinkster</h1>
+<script>
+$scope.login = function(){
+    $http.post("backend/api-token-auth/", {'username': $scope.username, 'password': $scope.password}).success(function(response) {
+        $scope.logged = true;
+        $scope.jwt = response.token;
+        store.set('token', response.token);
+    }).error(function(response, status) {
+        $scope.logged = false;
+    });
+}
+    </script>
+    </body>
+</html>
