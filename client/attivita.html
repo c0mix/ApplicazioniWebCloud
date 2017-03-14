@@ -20,11 +20,8 @@
         <script src="public/components/sito/services/attivita.service.js"></script>
 
         <!-- Photo gallery toolset -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link type="text/css" rel="stylesheet" href="css/sportivi/html5reset-1.6.1.css">
         <link type="text/css" rel="stylesheet" href="css/attivita/styles.css">
-
-        <!-- Script Vari -->
-        <script src="public/dataParser.js"></script>
 
     </head>
 
@@ -33,16 +30,31 @@
 	        <h1>Le Nostre Attività</h1>
         </header>
 
-        <!--  Controllers -->
-    <div ng-app="sito" ng-controller="attivitaController">
+        <section id="gallery" ng-app="sito" ng-controller="attivitaController">
 
-        <time class='icon' ng-repeat="a in attivita">
-            <em>{{a.giornoEvento}}</em>
-            <strong>{{a.meseEvento}}</strong>
-            <span >{{a.numEvento}}</span>
-        </time>
+            <!-- Generazione dinamica delle "Cards" relative a ciascun evento-->
+            <figure ng-repeat="a in attivita">
 
-    </div>
+                <a>
+                    <time class='icon'>
+                        <em>{{a.giornoEvento}}</em>
+                        <strong>{{a.meseEvento}} {{a.annoEvento}}</strong>
+                        <span>{{a.numEvento}}</span>
+                    </time>
+                    <div class="container">{{a.nome}}
+                    <div class="container2">
+                        Descrizione: {{a.descrizione}}<br/>
+                        Orario: {{ a.oraEvento }}<br/>
+                        Prezzo: {{ a.prezzo }}€<br/>
+                        Facilitazioni: {{ a.facilitazioni }}<br/>
+                        Scontistica: {{ a.sconto }}%<br/>
+                    </div>
+                    </div>
+                </a>
+            </figure>
+        </section>
+
+
 
         <footer>
             <p>2017

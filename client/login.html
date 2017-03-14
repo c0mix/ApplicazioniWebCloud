@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ItaliaSportApplication">
     <head>
-    <title>Simple Angular Auth</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+
+        <!-- Meta Definition -->
+        <meta charset="utf-8">
+        <title>Italia Sport</title>
+
+        <!--  Angular Setup -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+
+        <!-- Application Setup -->
+        <script src="public/appRoutes.js"></script>
         <script src="public/app.js"></script>
-  </head>
-    <body>
-    <h1>Simple Angular Auth - Thinkster</h1>
-<script>
-$scope.login = function(){
-    $http.post("backend/api-token-auth/", {'username': $scope.username, 'password': $scope.password}).success(function(response) {
-        $scope.logged = true;
-        $scope.jwt = response.token;
-        store.set('token', response.token);
-    }).error(function(response, status) {
-        $scope.logged = false;
-    });
-}
-    </script>
-    </body>
+
+        <!--  Controllers -->
+        <script src="public/components/sito/controllers/sito.control.js"></script>
+
+    </head>
+
+<body auth-application>
+  <div id="login-holder">
+    ... login form
+  </div>
+    <div id="main">
+    ... ng-view, or the bulk of your html
+  </div>
+
+  <form ng-controller="LoginCtrl as login" ng-submit="login.submit()" method="post">
+    <input type="text" name="name" ng-model="loginData.name" placeholder="username" required="" />
+    <input type="password" name="password" ng-model="loginData.password" placeholder="Password" required />
+    <input type="submit" ng-disabled="loginForm.$invalid" value="Login" />
+</form>
+
+</body>
 </html>
+
+

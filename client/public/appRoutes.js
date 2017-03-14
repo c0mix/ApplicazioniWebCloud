@@ -8,10 +8,5 @@ angular.module('appRoutes', ["ui.router"])
         controller: 'sitoController'
     });
 
- //   $stateProvider.when('/sportivi', {
- //       templateUrl:'public/components/sito/templates/sportivi.template',
- //       controller : 'sitoController'
- //   });
-
     $urlRouterProvider.otherwise('/');
 }]);

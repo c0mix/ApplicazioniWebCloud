@@ -15,7 +15,7 @@ class SportivoSerializer(serializers.ModelSerializer):
 class AttivitaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attivita
-        fields = ('id', 'nome', 'descrizione', 'numEvento', 'giornoEvento', 'annoEvento', 'meseEvento', 'prezzo', 'sconto', 'facilitazioni', 'organizzatore', 'created')
+        fields = ('id', 'nome', 'descrizione', 'numEvento', 'oraEvento', 'giornoEvento', 'annoEvento', 'meseEvento', 'prezzo', 'sconto', 'facilitazioni', 'organizzatore', 'created')
 
 class TestSerializer(serializers.ModelSerializer):
     class Meta:

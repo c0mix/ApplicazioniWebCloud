@@ -99,7 +99,7 @@ class Attivita(models.Model):
         (Maggio, 'Maggio'),
         (Giugno, 'Giugno'),
         (Luglio, 'Luglio'),
-        (Agosto, 'Gennaio'),
+        (Agosto, 'Agosto'),
         (Settembre, 'Settembre'),
         (Ottobre, 'Ottobre'),
         (Novembre, 'Novembre'),
@@ -116,16 +116,14 @@ class Attivita(models.Model):
         (Domenica, 'Domenica'),
     )
 
-    numEvento = models.IntegerField(max_length=10, null=False)
+    numEvento = models.IntegerField(null=False)
     giornoEvento = models.CharField(max_length=10, choices=scelta_giorni, null=False)
     meseEvento = models.CharField(max_length=10, choices=scelta_mesi, null=False)
+    annoEvento = models.IntegerField(null=False)
+    oraEvento = models.TimeField(null=True, blank=True)
 
     nome = models.CharField(max_length=20)
     descrizione = models.CharField(max_length=10000)
-
-    annoEvento = models.IntegerField(null=False, max_length=4)
-    oraEvento = models.TimeField(null=True, blank=True)
-
     prezzo = models.FloatField(max_length=5)
     sconto = models.FloatField(max_length=2, blank=True)
     facilitazioni = models.CharField(max_length=10000, blank=True)

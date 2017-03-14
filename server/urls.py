@@ -28,10 +28,11 @@ router.register(prefix='users', viewset=UserViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^auth/login', obtain_jwt_token),  # using JSON web token
-    url(r'^auth/register', views.RegistrationView.as_view()),
-    url(r'^auth/password/reset', views.PasswordResetView.as_view()),
-    url(r'^auth/password/reset/confirm', views.PasswordResetConfirmView.as_view()),
+    #url(r'^auth/login', obtain_jwt_token),  # using JSON web token
+    #url(r'^auth/register', views.RegistrationView.as_view()),
+    #url(r'^auth/password/reset', views.PasswordResetView.as_view()),
+    #url(r'^auth/password/reset/confirm', views.PasswordResetConfirmView.as_view()),
     url(r'^auth/', include('djoser.urls')),
-    url(r'^auth/logout/$', views.LogoutView.as_view(), name='logout'),
+    url(r'^auth/', include('djoser.urls.authtoken')),
+    #url(r'^auth/logout/$', views.LogoutView.as_view(), name='logout'),
 ]
