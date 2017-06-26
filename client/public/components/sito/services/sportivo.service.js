@@ -12,7 +12,7 @@ sito.factory('Sportivo', function($resource) {
                 }
             },
             {
-                stripTrailingSlashes: false
+                stripTrailingSlashes: true
             }
         );
     });

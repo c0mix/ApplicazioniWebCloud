@@ -3,8 +3,7 @@
  */
 'use strict';
 
-sito
-    .factory('Auth', function($resource) {
+sito.factory('Auth', function($resource) {
         return $resource(
             'http://127.0.0.1:8000/auth/login/',
             {},
@@ -18,7 +17,7 @@ sito
                 }
             },
             {
-                stripTrailingSlashes: false
+                stripTrailingSlashes: true
             }
         );
     });

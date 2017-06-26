@@ -12,7 +12,7 @@ sito.factory('Attivita', function($resource) {
                 }
             },
             {
-                stripTrailingSlashes: false
+                stripTrailingSlashes: true
             }
         );
     });

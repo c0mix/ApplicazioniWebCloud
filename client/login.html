@@ -20,20 +20,90 @@
         <script src="public/components/sito/controllers/sito.control.js"></script>
 
     </head>
+<body>
+<!--
+<div class="well tab-content">
+    <div class="tab-pane" id="post-object-form">
 
-<body auth-application>
-  <div id="login-holder">
-    ... login form
-  </div>
-    <div id="main">
-    ... ng-view, or the bulk of your html
-  </div>
+        <form action="http://localhost:8000/auth/login/" method="POST" enctype="multipart/form-data" class="form-horizontal" novalidate>
+            <fieldset>
+                <input type='hidden'/>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">Username</label>
+                    <div class="col-sm-10">
+                        <input name="username" class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">Password</label>
+                    <div class="col-sm-10">
+                        <input name="password" class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" title="Make a POST request on the Login resource">POST</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    -->
 
-  <form ng-controller="LoginCtrl as login" ng-submit="login.submit()" method="post">
-    <input type="text" name="name" ng-model="loginData.name" placeholder="username" required="" />
-    <input type="password" name="password" ng-model="loginData.password" placeholder="Password" required />
-    <input type="submit" ng-disabled="loginForm.$invalid" value="Login" />
-</form>
+
+    <!--
+    <div class="tab-pane" id="post-generic-content-form">
+        <form action="http://localhost:8000/auth/login/" method="POST" class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label for="id__content_type" class="col-sm-2 control-label">Media type:</label>
+                    <div class="col-sm-10">
+                        <select data-override="content-type" id="id__content_type" name="_content_type" class="form-control">
+                            <option value="application/json" selected="selected">application/json</option>
+                            <option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>
+                            <option value="multipart/form-data">multipart/form-data</option>
+                        </select>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id__content" class="col-sm-2 control-label">Content:</label>
+                    <div class="col-sm-10">
+                        <textarea cols="40" data-override="content" id="id__content" name="_content" rows="10" class="form-control">
+                        {
+                            &quot;password&quot;: &quot;&quot;,
+                            &quot;username&quot;: &quot;&quot;
+                        }</textarea>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" title="Make a POST request on the Login resource">POST</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    -->
+<!--
+</div>
+-->
+
+<form name="login_form" ng-app="sito" ng-controller="authController" ng-submit="loginForm()">
+
+        <input name="username" ng-model="username" type="text" placeholder="Enter username..." class="u56 profile_input">
+        <input name="password" ng-model="password" type="password" placeholder="Enter password..." class="u57 profile_input">
+
+            <div id="u25"
+                 class="u25_container">
+                <div id="u25_img"
+                     class="clear_all_button detectCanvas" onclick="document.getElementById('login_form').reset()">
+                </div>
+            </div>
+
+            <div id="u27"
+                 class="u27_container">
+                <button type="submit" id="u27_img" ng-click="debug()" class="submit_button detectCanvas" />
+            </div>
+        </form>
 
 </body>
 </html>
