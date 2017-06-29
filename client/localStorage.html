@@ -19,9 +19,7 @@
         <script src="public/app.js"></script>
 
         <!-- Style -->
-        <link rel="stylesheet" href="css/home/style.css">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
-        <script src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+        <link rel="stylesheet" href="css/locals/style.css">
 
 
     </head>
@@ -34,37 +32,37 @@
         </header>
 
 
-
         <div>
-          <table id="table" class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+              <table id="table" class="table">
+                    <thead>
+                        <tr align="center">
+                            <th>Immagine</th>
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>Sport</th>
+                            <th>Paese di Nascita</th>
+                            <th>Data di Nascita</th>
+                            <th>Stato</th>
+                            <th>Altezza (Cm)</th>
+                            <th>Peso (Kg)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+              </table>
         </div>
 
-       <div id="movies">
-
-       </div>
-
-
-        <script src="/moviearray.js"></script>
+        <script src="/italiaSport.js"></script>
         <script>
-            console.log("salvo movies nel localstorage");
-            localStorage.setItem("movies", JSON.stringify(movieDat));
-            console.log("leggo movies dal localstorage");
+            console.log("scrivo SPORTIVI nel localstorage");
+            localStorage.setItem("sportivi", JSON.stringify(sportiviDat));
+            console.log("leggo SPORTIVI dal localstorage");
             (function() {
                 'use strict';
 
                 var table, row, cell;
 
-                var result=JSON.parse(localStorage.getItem("movies"));
+                var result=JSON.parse(localStorage.getItem("sportivi"));
                 console.log(result);
 
                 table = document.getElementById('table');
@@ -73,34 +71,36 @@
                     // insert a new row at the end of the table
                     row = table.insertRow(-1);
 
-                    for (var prop in result[i]) {
-                        cell = row.insertCell();
-                        cell.innerText = result[i][prop];
-                    }
+                    cell = row.insertCell();
+                    cell.innerHTML = '<img src="'+result[i].thumbnail+'" height="100" width="100">';
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].name;
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].lastname;
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].sport.toUpperCase();
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].birth.placeOfBirth;
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].birth.date;
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].birth.country;
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].height;
+
+                    cell = row.insertCell();
+                    cell.innerHTML = result[i].weight;
+
                 }
             })();
         </script>
-
-        <!--
-        <script>
-            console.log("salvo movies nel localstorage");
-            localStorage.setItem("movies", JSON.stringify(movieDat));
-            console.log("leggo movies dal localstorage");
-            var result=JSON.parse(localStorage.getItem("movies"));
-            console.log(result);
-            for(i=0;i<result.length;i++){
-              movieDiv='<div class="col-md-12">Sportivo: '+result[i].name+'</div>';
-              movieDiv2= '<div class="col-md-12">OUT: '+result[i].out+'</div>';
-              elem=document.getElementById("movies");
-              newElem=document.createElement('div');
-              newElem.className="row marg";
-              newElem.innerHTML=movieDiv;
-              newElem.innerHTML=movieDiv2;
-              elem.appendChild(newElem);
-            }
-        </script>
-
-        -->
 
         <footer>
             <p>2017
