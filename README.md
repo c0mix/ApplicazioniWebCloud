@@ -1,4 +1,4 @@
-#Italia Sport
+# Italia Sport
 ## Project Description
 Il portale Italia Sport è stato sviluppato come progetto finale del corso "Applicazioni Web e Cloud" tenuto dal Prof. Claudio Ardagna @Università degli studi di Milano.
 Questo progetto ha come scopo quello di esplorare ed imparare ad utilizzare le più moderne tecnologie, linguaggi e costrutti utilizzati nella costruzine di applicazioni web moderne; di seguito un breve elenco delle princiali tecnologie utilizzate:
