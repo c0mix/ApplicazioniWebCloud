@@ -31,11 +31,77 @@ Il backend dell'applicativo è stato realizzato utilizzando il paradigma REST (R
 `
 "REST (REpresentational State Transfer) is an architectural style to build services on top of the Web. REST simplifies interaction with a web-based system via simplified URLs, instead of complex HTTP requests."  
 `
+
+Il frontend è stato realizzato utilizzando la tecnologia AngularJS per "consumare" la API REST e l'HTML5 unito al CSS3 per gestire la grafica.
+
+`
+AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.
+`
+
 ### Main Features
+- CSS3 Slider (Homepage): Grazie alla nuova tecnologia CSS3 è possibile far muovere elementi gli elementi della pagina e creare degli slidere senza utilizzare Javascript.
 
+```
+HTML
 
-# Final Presentation Slide
-[Italia Sport Comi Lorenzo](ItaliaSportComi.pdf)
+[...]
+<li id="first" class="firstanimation">
+    <a href="#"> <img src="images/img_1.jpg"/> </a>
+</li>
+[...]
+
+CSS3
+
+[...]
+#slider li.firstanimation {
+	-moz-animation:cycle 25s linear infinite;
+	-webkit-animation:cycle 25s linear infinite;
+}
+
+@-moz-keyframes cycle {
+	0%  { top:0px; }
+	4%  { top:0px; }
+	16% { top:0px; opacity:1; z-index:0; }
+	20% { top:325px; opacity:0; z-index:0; }
+	21% { top:-325px; opacity:0; z-index:-1; }
+	92% { top:-325px; opacity:0; z-index:0; }
+	96% { top:-325px; opacity:0; }
+	100%{ top:0px; opacity:1; }
+
+}
+[...]
+```
+
+- HTML5 LocalStorage (Local Storage): utilizzando javascript è possibile caricare nel local storage del browser i dati relativi agli sportivi e rileggerli in un secondo momento per includerli in una tabella.
+
+```
+[...]
+<script src="/italiaSport.js"></script>
+    <script>
+        console.log("scrivo SPORTIVI nel localstorage");
+        localStorage.setItem("sportivi", JSON.stringify(sportiviDat));
+        console.log("leggo SPORTIVI dal localstorage");
+        (function() {
+            'use strict';
+
+            var table, row, cell;
+
+            var result=JSON.parse(localStorage.getItem("sportivi"));
+            console.log(result);
+
+            table = document.getElementById('table');
+
+            for (var i = 0; i < result.length; i++) {
+                // insert a new row at the end of the table
+                row = table.insertRow(-1);
+
+                cell = row.insertCell();
+                cell.innerHTML = '<img src="'+result[i].thumbnail+'" height="100" width="100">';
+[...]
+```
+
+## Final Presentation Slide
+[Italia Sport Comi Lorenzo](documentazione/ComiLorenzoAWC.pdf)
 
 ## Screenshots & Video Demo
 ### HomePage
