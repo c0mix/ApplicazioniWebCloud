@@ -39,7 +39,7 @@ AngularJS lets you extend HTML vocabulary for your application. The resulting en
 `
 
 ### Main Features
-- CSS3 Slider (Homepage): Grazie alla nuova tecnologia CSS3 è possibile far muovere elementi gli elementi della pagina e creare degli slidere senza utilizzare Javascript.
+- CSS3 Slider (Homepage): Grazie alla nuova tecnologia CSS3 è possibile far muovere gli elementi della pagina e creare degli slider senza utilizzare Javascript.
 
 ```
 HTML
