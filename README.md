@@ -35,7 +35,7 @@ Il backend dell'applicativo è stato realizzato utilizzando il paradigma REST (R
 Il frontend è stato realizzato utilizzando la tecnologia AngularJS per "consumare" la API REST e l'HTML5 unito al CSS3 per gestire la grafica.
 
 `
-AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.
+"AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop."
 `
 
 ### Main Features
