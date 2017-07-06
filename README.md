@@ -32,3 +32,29 @@ Il backend dell'applicativo è stato realizzato utilizzando il paradigma REST (R
 "REST (REpresentational State Transfer) is an architectural style to build services on top of the Web. REST simplifies interaction with a web-based system via simplified URLs, instead of complex HTTP requests."  
 `
 ### Main Features
+
+
+# Final Presentation Slide
+[Italia Sport Comi Lorenzo](ItaliaSportComi.pdf)
+
+## Screenshots & Video Demo
+### HomePage
+<img src="screenshot/index.png" align="center"/>
+
+### Sportivi
+<img src="screenshot/sportivi2.png" align="center"/>
+
+
+### Attività
+<img src="screenshot/attivita.png" align="center"/>
+
+
+### Local Storage
+<img src="screenshot/localStorage2.png" align="center"/>
+
+### VIDEO Token-Based Authentication
+[Authorization Token Video Demo](screenshot/AuthDemo.mov)
+
+### VIDEO Web Site Tour
+[Web Tour Video Demo](screenshot/videodemo.mov)
+
